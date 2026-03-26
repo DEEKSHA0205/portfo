@@ -6,98 +6,35 @@
     <title>Deeksha M. | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
     <style>
-        :root {
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --accent: #00d2ff;
-            --bg: #0f172a;
-        }
-
+        :root { --glass: rgba(255, 255, 255, 0.05); --glass-border: rgba(255, 255, 255, 0.1); --accent: #00d2ff; --bg: #0f172a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: radial-gradient(circle at top left, #1e293b, #0f172a);
-            color: white;
-            overflow-x: hidden;
-        }
-
-        .blob {
-            position: fixed; width: 400px; height: 400px; background: var(--accent);
-            filter: blur(100px); border-radius: 50%; opacity: 0.1; z-index: -1;
-        }
-
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 40px;
-        }
-
-        nav {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 12px 25px; border-radius: 50px;
-            display: flex; gap: 25px; z-index: 1000;
-            border: 1px solid var(--glass-border);
-        }
-
+        body { font-family: 'Segoe UI', sans-serif; background: radial-gradient(circle at top left, #1e293b, #0f172a); color: white; overflow-x: hidden; }
+        .blob { position: fixed; width: 400px; height: 400px; background: var(--accent); filter: blur(100px); border-radius: 50%; opacity: 0.1; z-index: -1; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; margin-bottom: 40px; }
+        nav { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); padding: 12px 25px; border-radius: 50px; display: flex; gap: 25px; z-index: 1000; border: 1px solid var(--glass-border); }
         nav a { color: #cbd5e1; text-decoration: none; font-size: 0.85rem; cursor: pointer; }
-        nav a:hover { color: var(--accent); }
-
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-
-        /* HERO SECTION - Adjusted for peeking content */
-        #hero { 
-            height: 85vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
-        }
-
+        #hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         #name { font-size: clamp(2.5rem, 8vw, 4rem); background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .counter-badge { margin-top: 15px; color: var(--accent); font-size: 0.9rem; }
-
-        /* CONTENT SECTIONS */
-        .timeline-item { border-left: 2px solid var(--accent); padding-left: 20px; position: relative; margin-bottom: 30px; }
-        .timeline-item::after { content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .service-box { background: var(--glass); padding: 25px; border-radius: 20px; border: 1px solid var(--glass-border); }
-        .service-box i { color: var(--accent); font-size: 1.5rem; margin-bottom: 15px; }
-
         .skill-tag { background: rgba(0, 210, 255, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 50px; font-size: 0.75rem; margin: 3px; display: inline-block; border: 1px solid rgba(0, 210, 255, 0.2); }
+        
+        /* Form Styling */
+        input, textarea { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 10px; color: white; margin-bottom: 15px; outline: none; }
+        button { width: 100%; background: var(--accent); color: #0f172a; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
-
     <div class="blob" style="top: -50px; right: -50px;"></div>
     <div class="blob" style="bottom: -50px; left: -50px; background: #7000ff;"></div>
-
-    <nav>
-        <a onclick="window.scrollTo(0, 0)">Home</a>
-        <a href="#about-sec">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <nav><a onclick="window.scrollTo(0,0)">Home</a><a href="#about-sec">About</a><a href="#contact">Contact</a></nav>
 
     <div class="container">
         <section id="hero">
             <h1 id="name">Deeksha M.</h1>
             <h3 id="college" style="font-weight: 300; color: #94a3b8; margin: 10px 0;">Kristu Jayanti (Deemed to be University)</h3>
-            <div class="counter-badge">
-                <i class="fas fa-bolt"></i> <span id="view-count">0</span> Views from TiDB Cloud
-            </div>
-            <div style="margin-top: 40px; font-size: 0.7rem; letter-spacing: 2px; color: var(--accent); opacity: 0.5;">
-                CONTINUE TO BIO <br> <i class="fas fa-chevron-down" style="margin-top: 10px;"></i>
-            </div>
+            <div style="color: var(--accent); font-size: 0.9rem;"><i class="fas fa-bolt"></i> <span id="view-count">0</span> Profile Views</div>
         </section>
 
         <section id="about-sec">
@@ -106,67 +43,55 @@
                 <p id="about" style="margin-top: 15px; color: #cbd5e1; line-height: 1.6;"></p>
                 <div id="skills" style="margin-top: 20px;"></div>
             </div>
+        </section>
 
+        <section id="contact" style="padding-bottom: 100px;">
             <div class="glass-card">
-                <h2>Education & Experience</h2>
-                <div class="timeline-item">
-                    <h4>BSc AIML - 2nd Semester</h4>
-                    <p style="color: #94a3b8; font-size: 0.9rem;">2024 - Present</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>AI Fundamentals & Digital Marketing</h4>
-                    <p style="color: #94a3b8; font-size: 0.9rem;">Self-Directed Specialization</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" style="margin-top: 50px;">
-            <h2 style="margin-bottom: 30px;">Services</h2>
-            <div class="grid">
-                <div class="service-box">
-                    <i class="fas fa-laptop-code"></i>
-                    <h4>Fullstack Dev</h4>
-                    <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 10px;">Building secure apps with Node.js and SQL.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fas fa-microchip"></i>
-                    <h4>AI Integration</h4>
-                    <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 10px;">Merging data science with user interfaces.</p>
-                </div>
-            </div>
-        </section>
-
-       <section id="contact" style="padding: 100px 0;">
-            <div class="glass-card" style="text-align: center;">
-                <h2>Get In Touch</h2>
-                <p style="margin: 20px 0; color: #94a3b8;">
+                <h2 style="text-align: center; margin-bottom: 20px;">Send a Message to TiDB</h2>
+                <form id="msgForm">
+                    <input type="email" id="email" placeholder="Your University Email" required>
+                    <textarea id="message" rows="4" placeholder="Your message here..." required></textarea>
+                    <button type="submit" id="sendBtn">Send Message</button>
+                </form>
+                <p id="status" style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: var(--accent);"></p>
+                <div style="text-align: center; margin-top: 30px; color: #94a3b8;">
                     <i class="fas fa-envelope"></i> 25aimb18@kristujayanti.com
-                </p>
-                <div style="display: flex; justify-content: center; gap: 20px; font-size: 1.5rem;">
-                    <a href="mailto:25aimb18@kristujayanti.com" style="color:white;"><i class="fas fa-paper-plane"></i></a>
-                    <i class="fab fa-github"></i> 
-                    <i class="fab fa-linkedin"></i>
                 </div>
             </div>
         </section>
     </div>
 
     <script>
+        // Load Data
         fetch('/api/data').then(res => res.json()).then(data => {
             document.getElementById('name').innerText = data.profile.full_name;
             document.getElementById('college').innerText = data.profile.college_name;
             document.getElementById('about').innerText = data.profile.about_text;
-            const sDiv = document.getElementById('skills');
             data.profile.skills.split(',').forEach(s => {
-                const span = document.createElement('span');
-                span.className = 'skill-tag';
-                span.innerText = s.trim();
-                sDiv.appendChild(span);
+                const span = document.createElement('span'); span.className = 'skill-tag'; span.innerText = s.trim();
+                document.getElementById('skills').appendChild(span);
             });
         });
+        fetch('/api/stats').then(res => res.json()).then(data => { document.getElementById('view-count').innerText = data.views; });
 
-        fetch('/api/stats').then(res => res.json()).then(data => {
-            document.getElementById('view-count').innerText = data.views;
+        // Handle Message Submit
+        document.getElementById('msgForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('sendBtn');
+            btn.innerText = "Sending...";
+            const data = { email: document.getElementById('email').value, message: document.getElementById('message').value };
+            
+            const res = await fetch('/api/message', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            if(res.ok) {
+                document.getElementById('status').innerText = "Message saved in TiDB Cloud successfully!";
+                document.getElementById('msgForm').reset();
+            }
+            btn.innerText = "Send Message";
         });
     </script>
 </body>
